@@ -30,9 +30,12 @@ def click():
 
 @wrap.always(20)
 def always():
-    bx = wrap.sprite.get_x(blue)
-    by = wrap.sprite.get_y(blue)
-    wrap.sprite.set_angle_to_point(pacman, bx, by)
+    a=wrap.sprite.is_visible(blue)
+    if a==True:
+        bx = wrap.sprite.get_x(blue)
+        by = wrap.sprite.get_y(blue)
+        wrap.sprite.set_angle_to_point(pacman, bx, by)
+        wrap.sprite.move_at_angle_dir(pacman,3)
 
 
 
