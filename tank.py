@@ -14,7 +14,9 @@ def always():
 @wrap.on_mouse_down
 def click(pos_x,pos_y):
     a=wrap.sprite.is_collide_point(tank1,pos_x,pos_y)
-    if a==True:
+    b=wrap.sprite.is_collide_sprite(tank1,pric)
+    c=wrap.sprite.is_visible(pric)
+    if (a==True and c==False) or (b==True and c==True):
         wrap.sprite.set_costume_next(tank1)
 
 @wrap.on_mouse_move
@@ -31,7 +33,7 @@ def size():
         wrap.sprite.set_size(pric,h+20,w+20)
     if a==4:
         wrap.sprite.hide(pric)
-        wrap.sprite.set_size(pric, 15, 15)
+        wrap.sprite.set_size(pric, 50, 50)
         a=0
 
     a = a + 1
